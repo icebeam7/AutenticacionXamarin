@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutenticacionXamarin.View.FacebookProfileView">
+    <StackLayout Padding="10" x:Name="FB_Content">
+        <StackLayout Orientation="Horizontal" Padding="10">
+            <Image Source="{Binding FacebookProfile.Picture.Data.Url}"
+                   HeightRequest="100" WidthRequest="100" VerticalOptions="Start"/>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nombre: " TextColor="Black" Font="Bold" FontSize="22"/>
+                    <Label Text="{Binding FacebookProfile.Name}" TextColor="Black" Font="Bold" FontSize="22"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="ID: " TextColor="Black" Font="Bold" FontSize="22"/>
+                    <Label Text="{Binding FacebookProfile.Id}" TextColor="Black" Font="Bold" FontSize="22"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="¿Usuario Verificado? " TextColor="Black" Font="Bold" FontSize="22"/>
+                    <Label Text="{Binding FacebookProfile.IsVerified}" TextColor="Black" Font="Bold" FontSize="22"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Rango de edad: " TextColor="Black" Font="Bold" FontSize="22"/>
+            <Label Text="{Binding FacebookProfile.AgeRange.Min}" TextColor="Black" Font="Bold" FontSize="22"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Dispositivos: " TextColor="Black" Font="Bold" FontSize="22"/>
+            <Label Text="{Binding FacebookProfile.Devices[0].Os}" TextColor="Black" Font="Bold" FontSize="22"/>
+        </StackLayout>
+
+        <Image Source="{Binding FacebookProfile.Cover.Source}" HeightRequest="200" />
+    </StackLayout>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="GenerarNuevoToken" Order="Primary" Text="Nuevo Token" Priority="0" Clicked="GenerarNuevoToken_Clicked" />
+    </ContentPage.ToolbarItems>
+</ContentPage>

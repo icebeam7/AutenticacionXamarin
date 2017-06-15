@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace AutenticacionXamarin
 {
@@ -13,7 +8,7 @@ namespace AutenticacionXamarin
         {
             InitializeComponent();
 
-            MainPage = new AutenticacionXamarin.MainPage();
+            MainPage = new NavigationPage(new View.Menu());
         }
 
         protected override void OnStart()
